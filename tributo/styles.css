@@ -1,0 +1,48 @@
+body{
+    font-family:sans-serif;
+  }
+  #title,h2 {
+    color:rgb(30, 15, 168);
+    text-align: center;
+  }
+  main{
+    background-color:#E0E0E0;
+    padding:20px;
+    margin:20px;
+  }
+  #tribute-info{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  #image{
+    max-width:100%;
+    height:auto;
+  }
+  figure{
+  background-color:"#FFF";
+    border: 10px solid white;
+    text-align: center;
+  }
+  figure img{
+  justify-items:center;
+  display:block;
+  }
+  #img-caption{
+  color:yellow;
+  background-color:rgb(30, 25, 75);;
+  }
+  #main ul li{
+    list-style-type:circle;
+    line-height: 2.4rem;
+    margin:20px, 0px, 20px, 0px;
+  }
+  quote{
+    color:rgb(30, 15, 168);;
+  }
+  footer{
+  font-family:"fantasy, sans-serif";
+    font-size:1.3rem;
+    color:black;
+    margin-bottom:20px;
+    text-align: center;
+  }
