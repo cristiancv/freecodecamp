@@ -26,14 +26,16 @@
         <option value="escritorio">Escritorio</option>
         <option value="web">Web</option>
         <option value="mobil">Móvil</option>
-        </select><br>
-        <p>Recomendarías el sitio a un amigo?</p>
-        <label><input type="radio" value="Definitivamente" name="recomendacion" checked>
-        Definitivamente</label><br>
-        <label><input type="radio" value="tal-vez" name="recomendacion">
-        Tal vez</label><br>
-        <label><input type="radio" value="no" name="recomendacion">
-        No</label><br><br>
+        </select><br><br>
+        <fieldset id="recomendacion">
+             <legend>Recomendarías el sitio a un amigo?</legend>
+            <label><input type="radio" value="Definitivamente" name="recomendacion" checked>
+            Definitivamente</label><br>
+            <label><input type="radio" value="tal-vez" name="recomendacion">
+            Tal vez</label><br>
+            <label><input type="radio" value="no" name="recomendacion">
+            No</label><br>
+        </fieldset><br>        
         <p>¿Cuál es la mejor característica del sitio?.</p>
         <select id="dropdown-2" required>
         <option disabled select value>Elige uno</option>
@@ -41,16 +43,18 @@
         <option value="tareas">Tareas</option>
         <option value="proyectos">Proyectos</option>
         </select><br>
-        <p>En qué área te gustaría verte mejorar?  (Pon visto a todos los que deseas aplicar)</p>
+        <fieldset>
+        <legend>En qué área te gustaría verte mejorar?  (Pon visto a todos los que deseas aplicar)</legend>
         <label><input type="checkbox" value="front-end"> Proyectos Front End</label><br>
         <label><input type="checkbox" value="back-end"> Proyectos Back End</label><br>
         <label><input type="checkbox" value="android"> Proyectos Android</label><br>
         <label><input type="checkbox" value="bbdd"> Bases de datos</label><br>
         <label><input type="checkbox" value="escritorio"> Escritorio</label><br>
+    </fieldset>
         <div id="div-comentarios">
         <p>Dejanos un comentario o sugerencia.</p>
         <textarea id="textarea" placeholder="Escribe tu comentario aquí."></textarea>
-        </div><br><br><br>
+        </div><br>
         <button id="submit" type="submit">Enviar</button>
         </form>
         
