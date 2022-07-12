@@ -19,19 +19,28 @@
   }
   header p{
     font-size:1.2rem;
+    margin:20px;
   }
   main{
+    display:block;
     padding:20px;
-    margin:50px, auto;
+    width: 70%;
+    height: auto;
+    margin:50px auto;
   }
   #survey-form{
-  margin:20px;
-  display:block;
   background-color:rgb(43, 73, 43);
   padding-left:15px;
   padding-right:15px;
   padding-top: 15px;
   padding-bottom: 15px;
+  border-radius: 30px;
+  margin-left:10px;
+  margin-top:10px;
+  }
+  #survey-form p{
+    margin-left:20px;
+    margin-top:20px;
   }
   #survey-form label{
     padding-left:10px;
@@ -39,34 +48,59 @@
     padding-top:10px;
     padding-bottom:10px;
     margin-top:10px;
+    margin-left:10px;
     display: inline-block;
   }
+  .caja-texto{
+    width: 90%;
+  }
+  
   #survey-form input{
     padding-top: 10px;
     padding-bottom:10px;
     padding-left:10px;
     padding-right:10px;
-    margin:10px 5px 10px 5px;
+    margin:10px 10px 20px 20px;
   }
+  /*  
   #survey-form fieldset{
     margin-left:10px;
     padding-left:10px;
     margin-bottom:10px;
     padding-bottom:10px;
+    margin-right: 10px;
+    padding-right: 10px;
   }
+  */
   #survey-form legend{
-    margin:5px;
-    padding:10px;
+    margin-left:10px;
+    padding-left:10px;
+    padding-right:15px;
+    padding-top:10px;
+    margin-top:10px;
+    margin-right: 5px;
     font-size:1.2rem;   
     color:var(--titulos);
   }
   #survey-form select{
-    margin:10px;
-    padding:5px;
+    margin:10px 10px 10px 20px;
+    padding:10px;
+  }
+  #survey-form .campo{
+    margin:10px 10px 10px 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  #survey-form .campo label{
+    margin-left: 5px;
+    padding-left: 5px;
   }
   #div-comentarios{
     margin-top:10px;
     padding-top:10px;    
+  }
+  #div-comentarios p{
+    text-align: center;
   }
   #textarea{
    padding:10px;
@@ -77,13 +111,14 @@
   #survey-form button{
     align-items:center;
     text-align:center;
-    width:50vw;
+    width:30vw;
     color:yellow;
   background-color:rgb(24, 51, 24);
   padding:10px;
-  margin-left:50px;
+  display:block;
   font-size:1.6rem;
-  margin-bottom:20px;
+  margin:20px auto;
+  border-radius: 20px;
   }
   @media (max-width:400px) {
     #survey-form input{
