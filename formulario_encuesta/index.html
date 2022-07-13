@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reto Formulario de Registro</title>
-    <link rel="stylesheet" href="styles.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto Formulario de Registro</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <main id="principal">
-        <header>
-        <h1 id="title">Formulario de inscripción para desarrollador.</h1><hr></br></br>
-        <p id="description">Por favor lea bien cada apartado y proporcione la información solicitada.</p>
-        </header>
-        <section id="seccion">
-        <form id="survey-form" action="registro.php">
-        <label id="name-label" for="name">Name</label><br>
-        <input class="caja-texto" type="text" id="name" name="name" required placeholder="Ingrese su nombres y apellidos."><br>
-        <label id="email-label" for="name">Email</label><br>
-        <input class="caja-texto" type="email" id="email" name="email" required placeholder="Ingrese su dirección de correo electrónico."><br>
+  <main id="principal">
+    <header>
+      <h1 id="title">Formulario de inscripción para desarrollador.</h1>
+      <hr></br></br>
+      <p id="description">Por favor lea bien cada apartado y proporcione la información solicitada.</p>
+    </header>
+    <section id="seccion">
+      <form id="survey-form" action="registro.php">
+        <label id="name-label" for="name">Nombre completo</label><br>
+        <input class="caja-texto" autocomplete="on" type="text" id="name" name="name" required
+          placeholder="Ingrese su nombres y apellidos."><br>
+        <label id="email-label" for="name">Correo electrónico</label><br>
+        <input class="caja-texto" type="email" id="email" name="email" required autocomplete="on"
+          placeholder="Ingrese su dirección de correo electrónico."><br>
         <label for="number" id="number-label" name="number">Edad</label><br>
         <input class="caja-texto" type="number" id="number" placeholder="8" min="8" max="100"><br>
         <p> Cuál es tu área de desarrollo favorita?</p>
         <select id="dropdown" required>
-        <option disabled select value>Elige una</option>
-        <option value="escritorio">Escritorio</option>
-        <option value="web">Web</option>
-        <option value="mobil">Móvil</option>
+          <option disabled select value>Elige una</option>
+          <option value="escritorio">Escritorio</option>
+          <option value="web">Web</option>
+          <option value="mobil">Móvil</option>
         </select><br><br>
         <fieldset class="campo" id="recomendacion">
-             <legend>Recomendarías el sitio a un amigo?</legend>
-            <label><input type="radio" value="Definitivamente" name="recomendacion" checked>
+          <legend>Recomendarías el sitio a un amigo?</legend>
+          <label><input type="radio" value="Definitivamente" name="recomendacion" checked>
             Definitivamente</label><br>
-            <label><input type="radio" value="tal-vez" name="recomendacion">
+          <label><input type="radio" value="tal-vez" name="recomendacion">
             Tal vez</label><br>
-            <label><input type="radio" value="no" name="recomendacion">
+          <label><input type="radio" value="no" name="recomendacion">
             No</label><br>
-        </fieldset><br>        
+        </fieldset><br>
         <p>¿Cuál es la mejor característica del sitio?.</p>
         <select id="dropdown-2" required>
-        <option disabled select value>Elige uno</option>
-        <option value="retos">Retos</option>
-        <option value="tareas">Tareas</option>
-        <option value="proyectos">Proyectos</option>
+          <option disabled select value>Elige uno</option>
+          <option value="retos">Retos</option>
+          <option value="tareas">Tareas</option>
+          <option value="proyectos">Proyectos</option>
         </select><br>
         <fieldset class="campo" id="mejorar">
-        <legend >En qué área te gustaría verte mejorar?  (Pon visto a todos los que deseas aplicar)</legend>
-        <label><input type="checkbox" value="front-end"> Proyectos Front End</label><br>
-        <label><input type="checkbox" value="back-end"> Proyectos Back End</label><br>
-        <label><input type="checkbox" value="android"> Proyectos Android</label><br>
-        <label><input type="checkbox" value="bbdd"> Bases de datos</label><br>
-        <label><input type="checkbox" value="escritorio"> Escritorio</label><br>
-    </fieldset></br></br>
+          <legend>En qué área te gustaría verte mejorar? (Pon visto a todos los que deseas aplicar)</legend>
+          <label><input type="checkbox" value="front-end"> Proyectos Front End</label><br>
+          <label><input type="checkbox" value="back-end"> Proyectos Back End</label><br>
+          <label><input type="checkbox" value="android"> Proyectos Android</label><br>
+          <label><input type="checkbox" value="bbdd"> Bases de datos</label><br>
+          <label><input type="checkbox" value="escritorio"> Escritorio</label><br>
+        </fieldset></br></br>
         <div id="div-comentarios">
-        <p>Dejanos un comentario o sugerencia.</p>
-        <textarea id="textarea" placeholder="Escribe tu comentario aquí.">
+          <p>Dejanos un comentario o sugerencia.</p>
+          <textarea id="textarea" placeholder="Escribe tu comentario aquí.">
         </textarea>
         </div><br>
         <button id="submit" type="submit">Enviar</button>
-        </form>        
-        </section>
-        </main>
+      </form>
+    </section>
+  </main>
 </body>
+
 </html>
