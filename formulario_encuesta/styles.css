@@ -52,6 +52,7 @@ main {
   margin-top: 10px;
   margin-left: 10px;
   display: inline-block;
+  color:var(--titulos);
 }
 .caja-texto {
   width: 90%;
@@ -89,15 +90,19 @@ main {
 #div-comentarios {
   margin-top: 10px;
   padding-top: 10px;
+  height: 30vh;
 }
 #div-comentarios p {
   text-align: center;
+  font-size: 1.2rem;
 }
 #textarea {
+  display: block;
   padding: 10px;
-  margin: 20px 10px 10px 20px;
-  width: 95%;
-  display: inline-block;
+  /*margin: 20px 10px 10px 20px;*/
+  margin:20px auto;
+  width: 90%;
+  height: 20vh;
 }
 #survey-form button {
   align-items: center;
@@ -111,9 +116,44 @@ main {
   margin: 20px auto;
   border-radius: 20px;
 }
+/* Estilos para pantallas de máximo 900 pixeles de ancho 
+Inicio */
+@media screen and (max-width: 900px) {
+  #principal{
+    width: 90vw;
+    height: auto;
+    padding: 10px;
+    margin:20px auto;
+  }
+  #survey-form{
+    display: inline-block;
+    padding:10px;
+    margin: 20px auto;
+    width: 100%;
+  }
+}
+/* Estilos para pantallas de máximo 700 pixeles de ancho 
+Fin */
+/* Estilos para pantallas de máximo 700 pixeles de ancho 
+Inicio */
+@media screen and (max-width: 700px) {
+  #principal{
+    width: 100vw;
+    padding: 5px;
+    margin:5px;
+  }
+  #survey-form{
+    padding:5px;
+    margin: 5px;
+    width: 95%;
+  }
+}
+/* Estilos para pantallas de máximo 700 pixeles de ancho 
+Fin */
+
 /* Estilos para pantallas de máximo 400 pixeles de ancho 
 Inicio */
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
   #survey-form {
     width: 100%;
     margin: 0px;
@@ -137,56 +177,19 @@ Inicio */
     max-width: 100%;
   }
   #survey-form #textarea {
-    display: inline-block;
+    display: block;
     width: 90%;
-    height: auto;
-    margin-right: 10px;
-    padding-right: 10px;
+    /*height: auto;*/
+    margin: 10px auto;
+    /*padding-right: 10px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 10px;*/
   }
   #survey-form #submit {
     font-size: 1rem;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 }
-/* Estilos para pantallas de máximo 600 pixeles de ancho 
+/* Estilos para pantallas de máximo 400 pixeles de ancho 
 Fin */
 
-@media (min-width: 400px & max-width: 600px) {
-  #survey-form {
-    width: 92%;
-    margin: 0px;
-    padding: 0px;
-  }
-  #survey-form input {
-    max-width: 90%;
-    height: auto;
-  }
-  main {
-    display: inline-block;
-    padding: 0px;
-    max-width: 95vw;
-    height: auto;
-  }
-  #principal {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  #div-comentarios {
-    max-width: 100%;
-  }
-  #survey-form #textarea {
-    display: inline-block;
-    width: 90%;
-    height: auto;
-    margin-right: 10px;
-    padding-right: 10px;
-  }
-  #survey-form #submit {
-    font-size: 1rem;
-    margin: 20px auto;
-  }
-}
