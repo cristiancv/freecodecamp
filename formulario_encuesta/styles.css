@@ -99,7 +99,6 @@ main {
 #textarea {
   display: block;
   padding: 10px;
-  /*margin: 20px 10px 10px 20px;*/
   margin:20px auto;
   width: 90%;
   height: 20vh;
@@ -132,7 +131,7 @@ Inicio */
     width: 100%;
   }
 }
-/* Estilos para pantallas de máximo 700 pixeles de ancho 
+/* Estilos para pantallas de máximo 900 pixeles de ancho 
 Fin */
 /* Estilos para pantallas de máximo 700 pixeles de ancho 
 Inicio */
@@ -179,11 +178,7 @@ Inicio */
   #survey-form #textarea {
     display: block;
     width: 90%;
-    /*height: auto;*/
     margin: 10px auto;
-    /*padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;*/
   }
   #survey-form #submit {
     font-size: 1rem;
