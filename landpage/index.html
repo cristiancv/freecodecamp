@@ -1,55 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto LandPage Reto</title>
-    <link rel="stylesheet" href="css/estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto LandPage Reto</title>
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
-<header id="header">
-<figure>
-<img id="header-img" src="./recursos/guitar_logo.jpg" alt="Logo">
-<figcaption> Tu tienda de guitarras predilecta.</figcaption>
-</figure>
-<nav id="nav-bar">
-<ul>
-    <li><a class="nav-link" href="#especificaciones">Especificaciones</a></li>
-    <li><a class="nav-link" href="#funcionamiento">Funcionamiento</a></li>
-    <li><a class="nav-link" href="#precios">Precios</a></li>
-</ul>
-</nav>
-</header>
-<main id="principal">
-<section id="sec-registro">
-<h1>Deseas obtener nuestro último catálogo?</h1>
-<form id="form" action="https://www.freecodecamp.com/email-submit">
-<input type="email" name="email" id="email" placeholder="Ingresa tu correo aquí."> <br>
-<input id="submit" type="submit" value="Recibir catálogo">
-</form>
-</section>
-<section id="sec-servicios">
-    <ul>
+  <header id="header">
+    <figure>
+      <img id="header-img" src="./recursos/guitar_logo.jpg" alt="Logo">
+      <figcaption> Tu tienda de guitarras predilecta.</figcaption>
+    </figure>
+    <nav id="nav-bar">
+      <ul>
+        <li><a class="nav-link" href="#especificaciones">Especificaciones</a></li>
+        <li><a class="nav-link" href="#funcionamiento">Funcionamiento</a></li>
+        <li><a class="nav-link" href="#precios">Precios</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="principal">
+    <section id="sec-registro">
+      <h1>Deseas obtener nuestro último catálogo?</h1>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <input type="email" name="email" id="email" placeholder="Ingresa tu correo aquí." required autocomplete="on">
+        <br>
+        <input id="submit" type="submit" value="Recibir catálogo">
+      </form>
+    </section>
+    <section id="sec-servicios">
+      <ul>
         <li>
-            <h3>Guitarras profesionales.</h3>
-            <p>Nuestros intrumentos de alta calidad ofrecen un sonido destacable para estudios de grabación o presentaciones en vivo.</p>
+          <h3>Guitarras profesionales.</h3>
+          <p>Nuestros intrumentos de alta calidad ofrecen un sonido destacable para estudios de grabación o
+            presentaciones en vivo.</p>
         </li>
         <li>
-            <h3>Servicio de envío.</h3>
-            <p>Ofrecemos el envío directo hasta tu domicilio mediante la contratación de despachos vía Servientrega.</p>
+          <h3>Servicio de envío.</h3>
+          <p>Ofrecemos el envío directo hasta tu domicilio mediante la contratación de despachos vía Servientrega.</p>
         </li>
         <li>
-            <h3>Servicio de seguro.</h3>
-            <p>Se trata de un seguro mediante el cual extendemos el período de garantía por 1 año adicional para un producto en específico.</p>
+          <h3>Servicio de seguro.</h3>
+          <p>Se trata de un seguro mediante el cual extendemos el período de garantía por 1 año adicional para un
+            producto en específico.</p>
         </li>
-    </ul>
-</section>
-<section id="sec-video">
-    <p>Video de muestra.</p>
-  <iframe id="video" width="480" height="240" src="https://www.youtube.com/embed/dh9CTUVzvog" title="Guitarras acusticas Fender | Review" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="sec-tarjetas">
-    <div id="precio1">
+      </ul>
+    </section>
+    <section id="sec-video">
+      <p>Video de muestra.</p>
+      <iframe id="video" width="480" height="240" src="https://www.youtube.com/embed/dh9CTUVzvog"
+        title="Guitarras acusticas Fender | Review" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </section>
+    <section id="sec-tarjetas">
+      <div id="precio1" class="tarjeta">
         <h4>GUITARRA 1</h4>
         <h3>$500</h3>
         <p>párrafo 1</p>
@@ -57,8 +65,8 @@
         <p>párrafo 3</p>
         <p>párrafo 4</p>
         <button type="submit">Añadir</button>
-    </div><br>
-    <div id="precio2">
+      </div><br>
+      <div id="precio2" class="tarjeta">
         <h4>GUITARRA 2</h4>
         <h3>$700</h3>
         <p>párrafo 1</p>
@@ -66,8 +74,8 @@
         <p>párrafo 3</p>
         <p>párrafo 4</p>
         <button type="submit">Añadir</button>
-    </div><br>
-    <div id="precio3">
+      </div><br>
+      <div id="precio3" class="tarjeta">
         <h4>GUITARRA 3</h4>
         <h3>$900</h3>
         <p>párrafo 1</p>
@@ -75,16 +83,17 @@
         <p>párrafo 3</p>
         <p>párrafo 4</p>
         <button type="submit">Añadir</button>
-    </div><br>
-</section>
-</main>
-<footer>
-    <nav>
-        <li><a href="#acercade">Acerca de.</a></li>
-        <li><a href="#pedidos">Pedidos.</a></li>
-        <li><a href="#soporte">Soporte.</a></li>
-    </nav>
+      </div><br>
+    </section>
+  </main>
+  <footer>
+    <nav id="nav-foot" class="nav-pie">
+      <li><a href="#acercade">Acerca de.</a></li>
+      <li><a href="#pedidos">Pedidos.</a></li>
+      <li><a href="#soporte">Soporte.</a></li>
+    </nav><br>
     <p>2022 Todos los derechos reservados TuGuitarra.shop</p>
-</footer>
+  </footer>
 </body>
+
 </html>
