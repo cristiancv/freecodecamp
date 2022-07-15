@@ -8,17 +8,20 @@ body {
   line-height: 2rem;
 }
 #header {
-  /*height: 30vh;*/
+  display: flex;
+  height: 30vh;
   width: 90vw;
   text-align: center;
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
 }
 #header figure {
   width: 100px;
   height: 100px;
   position: relative;
-  float: left;
+  /*float: left; */
 }
 #header-img {
   display: block;
@@ -28,7 +31,7 @@ body {
 #nav-bar {
   list-style: none;
   text-align: right;
-  float:right;
+  /*float:right; */
 }
 #nav-bar ul {
   background-color: cornflowerblue;
@@ -95,7 +98,7 @@ body {
   display: flex;
   flex-direction: row;
   margin: 20px auto;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 #sec-tarjetas .tarjeta {
   width: 200px;
