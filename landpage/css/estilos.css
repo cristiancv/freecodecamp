@@ -10,7 +10,7 @@ body {
 #header {
   display: flex;
   height: 30vh;
-  width: 90vw;
+  width: 96vw;
   text-align: center;
   padding: 10px;
   margin: 10px;
@@ -20,8 +20,6 @@ body {
 #header figure {
   width: 100px;
   height: 100px;
-  position: relative;
-  /*float: left; */
 }
 #header-img {
   display: block;
@@ -31,7 +29,6 @@ body {
 #nav-bar {
   list-style: none;
   text-align: right;
-  /*float:right; */
 }
 #nav-bar ul {
   background-color: cornflowerblue;
@@ -53,54 +50,59 @@ body {
 #principal {
   margin: 20px 10px;
   padding: 5px 10px;
-  width: 90vw;
+  width: 96vw;
 }
-#sec-registro {
+#catalogo {
   width: 100%;
   height: auto;
   margin: 10px auto;
+  padding:5px 10px;
   text-align: center;
 }
-#sec-registro h1 {
+#catalogo h1 {
   color: orangered;
 }
-#sec-registro input {
+#catalogo input {
   padding: 5px 10px;
   margin: 10px;
 }
-#sec-registro #submit {
+#catalogo #submit {
   background-color: orangered;
   color: floralwhite;
   border-radius: 20px;
 }
-#sec-servicios {
+#servicios {
   margin: 10px auto;
   padding: 5px 10px;
-  width: 80vw;
+  width: 90%;
   font-family: Arial, Helvetica, sans-serif;
 }
-#sec-servicios li {
+#servicios li {
   margin: 20px auto;
   padding: 10px;
 }
 #sec-video {
-  display: block;
+  display: flex;
+  flex-direction:column;
   margin: 20px auto;
   padding: 5px;
   text-align: center;
-  border:2px solid black;
-  width:50%;
+  border:2px dashed black;
+  width:100%;
+  justify-content: center;
 }
 #sec-video iframe {
   border: 2px solid orangered;
+  max-width: 100%;
+  align-self: center;
 }
-#sec-tarjetas {
+#precios {
   display: flex;
   flex-direction: row;
   margin: 20px auto;
   justify-content: space-around;
 }
-#sec-tarjetas .tarjeta {
+#precios .tarjeta {
   width: 200px;
   height: 300px;
   border: 2px dashed black;
@@ -109,12 +111,12 @@ body {
   text-align: center;
   background-color: burlywood;
 }
-#sec-tarjetas .tarjeta h4 {
+#precios .tarjeta h4 {
   background-color: orangered;
   margin: 10px 12px;
   padding: 5px 10px;
 }
-#sec-tarjetas .tarjeta h3 {
+#precios .tarjeta h3 {
   color: floralwhite;
   font-weight: bold;
   font-size: 1.5rem;
@@ -129,14 +131,15 @@ body {
   border-radius: 20px;
 }
 footer {  
-  width: 90vw;
-  background-color: rgb(170, 167, 155);
+  display: flex;
+  flex-direction:column;
+  width: 96vw;
+  background-color:rgb(215, 214, 211);
   margin: 10px 20px;
   padding: 10px 15px;
 }
-#nav-foot {
-  position: relative;
-  float: right;
+#nav-foot {  
+  align-self:flex-end;
   list-style: none;
   margin: 10px 5px;
   padding: 5px 10px;
@@ -149,12 +152,17 @@ footer {
   cursor: pointer;
   margin: 10px;
   padding: 5px;
+  color:rgb(14, 10, 208)
+}
+#nav-foot li a:hover {
+  background-color:rgb(13, 12, 89);
+  color:whitesmoke;  
 }
 footer p {
   text-align: center;
   margin: 10px auto;
-  padding: 5px 10px;  
-  position: relative;
-  bottom: 0px;
-  right:10px;
+  padding: 5px 10px;    
+  align-self:center;
 }
+/*Sección para Media Queries*/
+
