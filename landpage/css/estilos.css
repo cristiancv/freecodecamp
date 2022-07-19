@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+:root{
+--titulos:rgb(15, 15, 121);
+}
 body {
   font-family: "fantasy, sans-serif";
   line-height: 2rem;
@@ -51,6 +54,7 @@ body {
 }
 #nav-bar ul {
   background-color: cornflowerblue;
+  display: flex;
 }
 #nav-bar li {
   list-style: none;
@@ -82,16 +86,17 @@ body {
   text-align: center;
 }
 #catalogo h1 {
-  color: orangered;
+  color: var(--titulos);
 }
 #catalogo input {
   padding: 5px 10px;
   margin: 10px;
 }
 #catalogo #submit {
-  background-color: orangered;
-  color: floralwhite;
+  background-color:cornflowerblue;
+  color:floralwhite;
   border-radius: 20px;
+  font-size:1.1rem;
 }
 #servicios {
   margin: 20px auto;
@@ -103,32 +108,46 @@ body {
   margin: 20px auto;
   padding: 10px;
 }
+#servicios li h3{
+  text-align: center;
+  margin-bottom: 20px;
+}
+#servicios li p{
+  text-align: justify;
+  font-size: 1.2rem;
+}
+h1, h3{
+  color:var(--titulos);
+  /*color:cornflowerblue;*/
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 #sec-video {
   display: flex;
-  flex-direction:column;
+  flex-direction:row;
   margin: 20px auto;
   padding: 5px;
   text-align: center;
-  border:2px dashed black;
+  /*border:2px dashed black;*/
   width:100%;
   justify-content: center;
 }
 #sec-video iframe {
   border: 2px solid orangered;
   max-width: 100%;
+  /*height: auto;*/
   align-self: center;
 }
 #precios {
   display: flex;
   flex-direction: row;
-  margin: 20px auto;
+  margin: 50px auto;
   justify-content: space-around;
 }
 #precios .tarjeta {
   width: 200px;
   height: 300px;
   border: 2px dashed black;
-  margin: 20px 30px;
+  /*margin: 20px 30px;*/
   padding: 10px 15px;
   text-align: center;
   background-color: burlywood;
@@ -189,4 +208,17 @@ footer p {
   align-self:center;
 }
 /*Sección para Media Queries*/
-
+@media screen and (min-width:35px) and (max-width:600px){
+  #header{
+    flex-direction:column;
+    justify-content: space-around;
+    height:35vh;
+  }
+  #header #nav-bar ul{
+    flex-direction: column;
+  }
+  #precios{
+    flex-direction: column;
+    align-items: center;
+  }
+}
