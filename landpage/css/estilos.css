@@ -208,11 +208,11 @@ footer p {
   align-self:center;
 }
 /*Sección para Media Queries*/
-@media screen and (min-width:35px) and (max-width:600px){
+@media screen and (min-width:350px) and (max-width:600px){
   #header{
     flex-direction:column;
     justify-content: space-around;
-    height:35vh;
+    height:auto;
   }
   #header #nav-bar ul{
     flex-direction: column;
