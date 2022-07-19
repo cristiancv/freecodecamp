@@ -10,16 +10,6 @@ body {
   font-family: "fantasy, sans-serif";
   line-height: 2rem;
 }
-/*#header {
-  display: flex;
-  height: 30vh;
-  width: 96vw;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-  justify-content: space-between;
-  align-items: center;
-}*/
 #header {
 	display: flex;
 	height: 25vh;
@@ -37,11 +27,6 @@ body {
   width: 100px;
   height: auto;
 }
-/*#header-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}*/
 #header-img {
 	display: flex;
 	max-width: 100%;
@@ -126,7 +111,6 @@ body {
 }
 h1, h3{
   color:var(--titulos);
-  /*color:cornflowerblue;*/
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #sec-video {
@@ -135,14 +119,12 @@ h1, h3{
   margin: 20px auto;
   padding: 5px;
   text-align: center;
-  /*border:2px dashed black;*/
   width:100%;
   justify-content: center;
 }
 #sec-video iframe {
   border: 2px solid orangered;
   max-width: 100%;
-  /*height: auto;*/
   align-self: center;
 }
 #precios {
@@ -155,7 +137,6 @@ h1, h3{
   width: 200px;
   height: 300px;
   border: 2px dashed black;
-  /*margin: 20px 30px;*/
   padding: 10px 15px;
   text-align: center;
   background-color: burlywood;
@@ -187,7 +168,6 @@ footer {
   width: 100%;
   background-color:rgb(215, 214, 211);
   margin-top: 50px;
-  /*padding: 10px 15px;*/
 }
 #nav-foot {  
   align-self:flex-end;
