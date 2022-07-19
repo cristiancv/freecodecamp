@@ -35,7 +35,7 @@ body {
 }
 #header figure {
   width: 100px;
-  height: 100px;
+  height: auto;
 }
 /*#header-img {
   display: block;
@@ -50,7 +50,7 @@ body {
 	align-items: center;
 }
 #nav-bar {
-  text-align: right;
+  text-align: left;
 }
 #nav-bar ul {
   background-color: cornflowerblue;
@@ -73,10 +73,10 @@ body {
 }
 #principal {
   position:relative;
-  top:160px;
+  top:170px;
   margin-top: 50px;
-  /*padding: 5px 10px;*/
   width: 100%;
+  height: auto;
 }
 #catalogo {  
   width: 100%;
@@ -93,10 +93,17 @@ body {
   margin: 10px;
 }
 #catalogo #submit {
-  background-color:cornflowerblue;
+  background-color:rgb(13, 12, 89);
   color:floralwhite;
   border-radius: 20px;
   font-size:1.1rem;
+  margin:10px;
+  padding:10px;
+}
+#catalogo #submit:hover{
+  background-color: whitesmoke;
+  color:rgb(13,12,89);
+  cursor: pointer;
 }
 #servicios {
   margin: 20px auto;
@@ -107,9 +114,10 @@ body {
 #servicios li {
   margin: 20px auto;
   padding: 10px;
+  list-style-type: none;
 }
 #servicios li h3{
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 #servicios li p{
@@ -141,7 +149,7 @@ h1, h3{
   display: flex;
   flex-direction: row;
   margin: 50px auto;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 #precios .tarjeta {
   width: 200px;
@@ -208,11 +216,16 @@ footer p {
   align-self:center;
 }
 /*Sección para Media Queries*/
+/*Inicio mediaqueries mínimo 350px y máximo 600px*/
 @media screen and (min-width:350px) and (max-width:600px){
   #header{
     flex-direction:column;
     justify-content: space-around;
     height:auto;
+  }
+  #principal{
+    position: relative;
+    top:200px;
   }
   #header #nav-bar ul{
     flex-direction: column;
@@ -221,4 +234,8 @@ footer p {
     flex-direction: column;
     align-items: center;
   }
+  #precios .tarjeta{
+    margin:30px auto;
+  }
 }
+/*Fin mediaqueries mínimo 350px y máximo 600px*/
