@@ -58,12 +58,12 @@
         <section class="main-section">
           <header id="git_init"> <h2>Git init - inicializar una carpeta como un repositorio Git. </h2></header>
           <p>Para crear un repositorio en una carpeta existente de archivos, podes ejecutar el
-            comando git init en esa carpeta. Por ejemplo, digamos que tenemos una carpeta
+            comando <span><b>git init</b></span>   en esa carpeta. Por ejemplo, digamos que tenemos una carpeta
             con algunos archivos adentro, así:</p>
           <pre>
 <code>
-  #cd repositorio_nuevo
-  #ls
+  $cd repositorio_nuevo
+  $ls
   README hello.rb
 </code>            
 </pre>
@@ -71,43 +71,130 @@
             en todos los idiomas. Hasta el momento, sólo tenemos el código escrito en Ruby.
             Para iniciar el control de versión con Git, podemos ejecutar git init.</p>
 <pre><code>
-  #git init
+  $git init
   Initialized empty Git repository in /repositorio_nuevo/.git/
 </code></pre>
 <p>Ahora se puede ver que hay una subcarpeta oculta llamada “.git” en el proyecto.
   Este es tu repositorio donde se almacenan todos los cambios del proyecto. </p>
-  <pre><code>
-    #ls -a 
-    . .. .git README hello.rb
-  </code></pre>
+<pre><code>
+  $ls -a 
+  . .. .git README hello.rb
+</code></pre>
   <p>
     En pocas palabras, se usa “git init” para convertir una carpeta existente en un
 nuevo repositorio Git. Se puede hacer esto en cualquier carpeta en cualquier
 momento.</p>
-<pre><p>Nota: Cuando se crea un repositorio con init, la primera vez que
-haces un push, tenes que correr <span><b>git push origin master</b></span>. Además
-hay que crear el branch master y hacerle un commit con los archivos
-agregados para que aparezca.
-  </p></pre>
-          <li></li>
+<ul>
+  <li>Nota: Cuando se crea un repositorio con init, la primera vez que
+    haces un push, tenes que correr <span><b>git push origin master</b></span>. Además
+    hay que crear el branch master y hacerle un commit con los archivos
+    agregados para que aparezca.
+  </li>
+</ul>
         </section>
         <section class="main-section">
-          <header id="titulo_2">Git clone - copiar un repositorio Git.</header>
-          <p>p1</p>
-          <p>p2</p>
-          <code></code>
+          <header id="titulo_2"> <h2>Git clone - copiar un repositorio Git.</h2></header>
+          <p>Si tienes que colaborar con alguien en un proyecto, o si deseas obtener una copia
+            de un proyecto para poder ver o usar el código, debes clonarlo. Para lograrlo
+            sólo tienes que ejecutar el comando <span><b>git clone [url]</b></span>  con la URL del proyecto que
+            deseas copiar.</p>
+<pre><code>
+$git clone git://github.com/schacon/simplegit.git
+
+Initialized empty Git repository in /private/tmp/simplegit/.git/
+remote: Counting objects: 100, done.
+remote: Compressing objects: 100% (86/86), done.
+remote: Total 100 (delta 35), reused 0 (delta 0)
+Receiving objects: 100% (100/100), 9.51 KiB, done.
+Resolving deltas: 100% (35/35), done.
+
+$cd simplegit/
+$ls 
+README Rakefile lib
+
+</code></pre>
+          <p>Esto copiará toda la historia de este proyecto, con lo cual lo tendrás a nivel local
+            y te dará una carpeta de trabajo de la rama principal de ese proyecto para que
+            puedas ver el código o empezar a editarlo. Si cambias a la nueva carpeta, podes
+            ver la subcarpeta .git (ahí es donde están todos los datos del proyecto).</p>
+<pre><code>
+$ ls -a
+. .. .git README Rakefile lib
+$ cd .git
+$ls 
+HEAD description info packed-refs
+branches hooks logs refs
+config index objects
+</code></pre>
+<p>Por defecto, Git va a crear una carpeta que tiene el mismo nombre que el
+  proyecto en la dirección que le indiques - básicamente cualquier cosa que
+  aparezca después de la última barra de la URL. Si queres un nombre diferente,
+  podes ponerlo al ﬁnal del comando, después de la URL. Entonces, se utiliza el
+  comando git clone para obtener una copia local de un repositorio Git, para que
+  puedas verlo y empezar a modiﬁcarlo. </p>        
         </section>
         <section class="main-section">
-          <header>git add - agregar los contenidos de archivos al staging area.</header>
-          <p>p1</p>
-          <p>p2</p>
-          <code></code>
+          <header><h2>git add - agregar los contenidos de archivos al staging area.</h2></header>
+          <p>En Git tenes que agregar previamente los cambios realizados al staging area
+            para luego poder hacer el commit correspondiente (conﬁrmar los cambios). Si
+            el archivo que estás agregando es nuevo, entonces tenes que correr el comando
+            <span><b>git add</b></span> para añadirlo inicialmente en tu staging area. Si el archivo ya está en
+            “seguimiento” también tenes que correr el mismo comando (<span><b>git add</b></span>), no para
+            agregar el archivo, sino para agregar las nuevas modiﬁcaciones en tu staging area.
+            Volviendo al ejemplo de Hola Mundo, una vez iniciado el proyecto, empezaremos
+            a agregarle archivos y para ello correremos el comando git add. Podemos usar
+            el comando git status para ver en que estado está nuestro proyecto.</p>
+<pre><code>
+  $ git status -s
+  ?? README
+  ?? hello.rb
+</code></pre>
+          <p>El estado ‘AM’ signiﬁca que el archivo fue modiﬁcado en el disco desde que lo
+            agregamos. Esto signiﬁca que si hacemos un commit de nuestro cambios hasta
+            este momento, estaríamos grabando la versión del archivo que teníamos en el
+            momento que corrimos git add, no la versión que está en nuestro disco. Git no
+            asume que lo que uno quiere subir es explícitamente lo que tenemos en el disco,
+            uno le tiene que avisar a Git con el comando git add nuevamente.</p>
+          <p> 
+            En pocas palabras, uno corre git add en un archivo cuando quiere incluir
+            cualquier cambio que le hayas hecho a tu próximo commit. Cualquier cambio
+            que no hayas agregado con este comando, no será incluído en el commit,
+            esta particularidad nos ofrece la posibilidad de armar los commits de una forma
+            más certera, con un alto nivel de detalle acerca de qué queremos incluir y qué
+            no.
+          </p>
         </section>
         <section class="main-section">
-          <header>git status - estado de los archivos en el directorio de trabajo y en
-            el staging area</header>
-          <p>p1</p>
-          <p>p2</p>
+          <header> <h2>git status - estado de los archivos en el directorio de trabajo y en
+            el staging area.</h2></header>
+          <p>Tal como lo mencionamos en la sección anterior, uno puede usar este comando
+            para ver el estado de su staging area comparado con el código que se encuentra en
+            su directorio de trabajo. Usando la opción “-s” nos mostrará la forma abreviada
+            del informe, en cambio si no usamos esa opción, nos mostrará más información
+            del contexto. Aquí hay un ejemplo del resultado con y sin la opción:
+          </p>
+<pre><code>
+$ git status -s
+AM README
+A hello.rb
+Sin la opción se vería algo así:
+$ git status -s
+$ git status
+# On branch master
+# Initial commit
+# Changes to be committed:
+# (use "git rm --cached file..." to unstage)
+# new file: README
+# new file: hello.rb
+# Changed but not updated:
+# (use "git add &ltfile&gt ..." to update what will be committed)
+# (use "git checkout -- &ltfile&gt..." to discard changes in working directory)
+# modified: README
+</code></pre>
+          <p>Se ve que la salida corta es más compacta, pero la salida larga tiene algunos
+            datos útiles que nos pueden llegar a servir en algún momento. Git además te
+            informará de los archivos que fueron borrados, agregados o modiﬁcados desde
+            tu último commit.</p>
           <code></code>
         </section>
         <section class="main-section">
