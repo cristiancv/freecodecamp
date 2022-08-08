@@ -10,7 +10,7 @@
   <body>
     <div id="contenido" class="contenedor">
       <nav id="navbar">
-        <header>Comandos básicos en Git: Índice</header>
+        <header> <h1>Comandos básicos en Git: Índice </h1></header>
         <ul>
           <li>
             <a class="nav-link" href="http://">git init - inicializar una carpeta como un repositorio Git.</a>
@@ -21,8 +21,7 @@
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://"
-              >git add - agregar los contenidos de archivos al staging area.</a>
+            <a class="nav-link" href="http://">git add - agregar los contenidos de archivos al staging area.</a>
           </li>
           <hr />
           <li>
@@ -57,35 +56,93 @@
       </nav>
       <main id="main-doc">
         <section class="main-section">
-          <header id="titulo_1">descripción1</header>
+          <header id="git_init"> <h2>Git init - inicializar una carpeta como un repositorio Git. </h2></header>
+          <p>Para crear un repositorio en una carpeta existente de archivos, podes ejecutar el
+            comando git init en esa carpeta. Por ejemplo, digamos que tenemos una carpeta
+            con algunos archivos adentro, así:</p>
+          <pre>
+<code>
+  #cd repositorio_nuevo
+  #ls
+  README hello.rb
+</code>            
+</pre>
+          <p>Se trata de un proyecto en el que estamos escribiendo ejemplos del “Hola Mundo”
+            en todos los idiomas. Hasta el momento, sólo tenemos el código escrito en Ruby.
+            Para iniciar el control de versión con Git, podemos ejecutar git init.</p>
+<pre><code>
+  #git init
+  Initialized empty Git repository in /repositorio_nuevo/.git/
+</code></pre>
+<p>Ahora se puede ver que hay una subcarpeta oculta llamada “.git” en el proyecto.
+  Este es tu repositorio donde se almacenan todos los cambios del proyecto. </p>
+  <pre><code>
+    #ls -a 
+    . .. .git README hello.rb
+  </code></pre>
+  <p>
+    En pocas palabras, se usa “git init” para convertir una carpeta existente en un
+nuevo repositorio Git. Se puede hacer esto en cualquier carpeta en cualquier
+momento.</p>
+<pre><p>Nota: Cuando se crea un repositorio con init, la primera vez que
+haces un push, tenes que correr <span><b>git push origin master</b></span>. Además
+hay que crear el branch master y hacerle un commit con los archivos
+agregados para que aparezca.
+  </p></pre>
+          <li></li>
+        </section>
+        <section class="main-section">
+          <header id="titulo_2">Git clone - copiar un repositorio Git.</header>
+          <p>p1</p>
+          <p>p2</p>
+          <code></code>
+        </section>
+        <section class="main-section">
+          <header>git add - agregar los contenidos de archivos al staging area.</header>
+          <p>p1</p>
+          <p>p2</p>
+          <code></code>
+        </section>
+        <section class="main-section">
+          <header>git status - estado de los archivos en el directorio de trabajo y en
+            el staging area</header>
+          <p>p1</p>
+          <p>p2</p>
+          <code></code>
+        </section>
+        <section class="main-section">
+          <header>git diff muestra diferencias entre el stage y lo modificado que
+            no esta en el stage.</header>
+          <p>p1</p>
+          <p>p2</p>
+          <code></code>
+        </section>
+        <section class="main-section">
+          <header>git commit - graba una instantánea del staging area</header>
+          <p>p1</p>
+          <p>p2</p>
+          <code></code>
+        </section>
+        <section class="main-section">
+          <header>git reset - deshace cambios y commits</header>
+          <p>p1</p>
+          <p>p2</p>
+          <code></code>
+        </section>
+        <section class="main-section">
+          <header>git rm - remueve archivos del staging area.</header>
           <p>p1</p>
           <p>p2</p>
           <code></code>
           <li></li>
         </section>
         <section class="main-section">
-          <header id="titulo_2">descripción2</header>
+          <header>git stash - guardar cambios realizados en el stage y el index para
+            confirmarlos más tarde.</header>
           <p>p1</p>
           <p>p2</p>
           <code></code>
-        </section>
-        <section class="main-section">
-          <header>descripción3</header>
-          <p>p1</p>
-          <p>p2</p>
-          <code></code>
-        </section>
-        <section class="main-section">
-          <header>descripción4</header>
-          <p>p1</p>
-          <p>p2</p>
-          <code></code>
-        </section>
-        <section class="main-section">
-          <header>descripción5</header>
-          <p>p1</p>
-          <p>p2</p>
-          <code></code>
+          <li></li>
         </section>
       </main>
     </div>
