@@ -195,20 +195,144 @@ $ git status
             datos útiles que nos pueden llegar a servir en algún momento. Git además te
             informará de los archivos que fueron borrados, agregados o modiﬁcados desde
             tu último commit.</p>
-          <code></code>
+<pre><code>
+$ git status -s
+M README
+D hello.rb
+</code></pre>
+<p>En el siguiente ejemplo se pueden ver dos columnas, la primera es para el staging
+  area, la segunda es para el directorio de trabajo. Entonces, por ejemplo si tienes
+  el README file en el stage y después lo modificas nuevamente sin correr <span><b>“git add”</b></span> nuevamente, vas a ver algo así: </p>
+<pre><code>
+$ git status -s
+MM README
+D hello.rb
+</code></pre>
         </section>
         <section class="main-section">
-          <header>git diff muestra diferencias entre el stage y lo modificado que
-            no esta en el stage.</header>
-          <p>p1</p>
-          <p>p2</p>
-          <code></code>
+          <header><h2>git diff muestra diferencias entre el stage y lo modificado que
+            no esta en el stage.</h2></header>
+            <p>Hay dos usos diferentes para el comando git diff. El uso que veremos a continuación lo vamos a usar para describir los cambios que están en stage o que
+              fueron modificados pero no están en el stage.</p>
+              <ul><li>
+                <h3>git diff - muestra las diferencias de cambios que no están en el stage.</h3>
+          <p>Sin ningún argumento adicional, un simple <span><b>git diff</b></span> mostrará en formato unificado, qué código o contenido ha cambiado en el proyecto desde el último commit,
+            que todavía no se metió en el stage area (no se le hizo el add) para el próximo
+            commit.</p>
+<pre><code>
+$ vim hello.rb
+$ git status -s
+M hello.rb
+$ git diff
+diff --git a/hello.rb b/hello.rb
+index d62ac43..8d15d50 100644
+--- a/hello.rb
++++ b/hello.rb
+@@ -1,7 +1,7 @@
+class HelloWorld
+def self.hello
+-
+puts "hello world"
+#indica que se reemplazó esta línea por la de abajo. (- por +)
++
+puts "hola mundo"
+end
+end
+</code></pre>
+          <p> Entonces, <span><b>“git diff”</b></span> te muestra cuáles son los cambios, línea por línea. Por lo
+            general es un buen comando de seguimiento de <span><b>git status</b></span>.</p></li>
+          <li>
+            <h3><span><b>git diff HEAD</b></span> - muestra las diferencias de todos los cambios, estén
+              o no en el staging.</h3>
+              <p>
+                Este comando nos permite básicamente ver la diferencia
+entre nuestro directorio de trabajo y el último commit, ignorando el staging area.
+Si hacemos un nuevo cambio en nuestro archivo hello.rb, entonces tendremos
+algunos cambios en el directorio de trabajo y otros en el último commit, si
+hacemos un <span><b>“diff HEAD”</b></span> entonces nos mostrará las diferencias entre lo último
+subido y el directorio, sin tener en cuenta lo que está en el staging area.
+              </p>
+          </li>
+          <li>
+            <h3>
+              git diff --stat - muestra una lista de cambios en lugar de un diff com-
+pleto por archivo.
+            </h3>
+            <p>
+              Si no queremos la salida completa del diff, pero queremos
+              más que la salida del <span><b>git status</b></span>, podemos utilizar la opción - stat, lo que nos
+              dará un resumen de los cambios en su lugar. Acá está el mismo ejemplo anterior,
+              pero con la opción --stat.
+            </p>
+<pre><code>
+$ git status -s
+MM hello.rb
+$ git diff --stat
+hello.rb |
+1 +
+1 files changed, 1 insertions(+), 0 deletions(-)
+</code></pre>
+<p>
+  También se puede proporcionar una ruta de archivo al final de cualquiera de
+estas opciones para limitar la salida del diff a un archivo o subdirectorio.
+</p>
+          </li>
+          </ul>
         </section>
         <section class="main-section">
-          <header>git commit - graba una instantánea del staging area</header>
-          <p>p1</p>
-          <p>p2</p>
-          <code></code>
+          <header><h2>git commit - graba una instantánea del staging area.</h2></header>
+          <p>Una vez que agregaste los cambios al staging area, vas a necesitar confirmar
+            esos cambios con el comando add, pero para poder hacerlo git necesita grabar
+            tus datos personales para poder hacer un seguimiento de los cambios. Entonces,
+            el primer paso es configurar estos datos:</p>
+<pre><code>
+$ git config --global user.name 'Tu nombre'
+$ git config --global user.email tumail@algundominio.com
+</code></pre>
+          <p>A continuación vamos a meter en el stage los cambios y luego a confirmarlos, en
+            este ejemplo se usa la opción -m para agregar el mensaje al mismo tiempo que
+            confirmamos los cambios:</p>
+<pre><code>
+$ git add hello.rb
+$ git status -s
+M hello.rb
+$ git commit -m 'mis cambios al archivo hola mundo'
+[master 68aa034] my hola mundo changes
+1 files changed, 2 insertions(+), 1 deletions(-)
+</code></pre>
+<p>
+  Ahora ya grabamos la instantánea del archivo. Si corremos el comando <span><b>git status</b></span> nuevamente, veremos que tenemos nuevamente un directorio de trabajo
+“limpio”, lo que significa que no hicimos ningún cambio desde nuestro último
+commit.
+</p>
+<pre><code>
+$ git status
+# On branch master nothing to commit (working directory clean)
+</code></pre>
+<p>
+  Si no ingresamos la opción -m git va a intentar abrir un editor de texto para
+que escribas el mensaje. Algo como esto:
+</p>
+<pre><code>
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#
+(use "git reset HEAD <file>..." to unstage)
+#
+# modified:
+hello.rb
+#
+~
+~
+".git/COMMIT_EDITMSG" 9L, 257C
+</code></pre>
+<p>
+En este punto se agrega el mensaje de cambios en la parte superior del docu-
+mento. Todas las líneas que comienzan con ‘#’ se ignoran. En general, es muy
+importante escribir un buen mensaje de confirmación.
+</p>
         </section>
         <section class="main-section">
           <header>git reset - deshace cambios y commits</header>
