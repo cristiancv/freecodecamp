@@ -333,6 +333,46 @@ En este punto se agrega el mensaje de cambios en la parte superior del docu-
 mento. Todas las líneas que comienzan con ‘#’ se ignoran. En general, es muy
 importante escribir un buen mensaje de confirmación.
 </p>
+<ul>
+  <li>
+    <h3><span><b>git commit -a</b></span>  - agrega automáticamente en el staging area los cam-
+      bios de archivos que están en seguimiento</h3>
+      <p>
+Si te parece que correr el comando git add cada vez que modificas un archivo es demasiado engorroso,
+Git te permite saltar esta parte con la opción -a. Esto le dice a Git, que ejecute
+el git add en cualquier archivo que ya esta en “seguimiento” - es decir, cualquier
+archivo que se encontraba en tu último commit y después fue modificado. Esto
+te permite hacer un flujo de trabajo más al estilo de Subversion, sólo tenés que
+editar los archivos y luego ejecutar git commit -a cuando queres que todo lo que
+ha cambiado entre en el commit. Igualmente siempre tenes que ejecutar git add
+para iniciar el seguimiento de nuevos archivos.
+      </p>
+<pre><code>
+  $ vim hello.rb
+  $ git status -s
+  M hello.rb
+  $ git commit -m 'cambios en el archivo hola'
+  # On branch master
+  # Changed but not updated:
+  #(use "git add &ltfile&gt..." to update what will be committed)
+  #(use "git checkout -- &ltfile&gt..." to discard changes in working directory)
+  #
+  # modified: hello.rb
+  #
+  no changes added to commit (use "git add" and/or "git commit -a")
+  $ git commit -am 'changes to hello file'
+  [master 78b2670] changes to hello file
+  1 files changed, 2 insertions(+), 1 deletions(-)
+</code></pre>
+<p>
+Este comando te permite cerrar el workflow de trabajo con git: haces cambios
+a tu archivos, después usas <span><b>git add</b></span>  para meter esos cambios en el staging area,
+con <span><b>git status</b></span>  y <span><b>git diff</b></span>  consultas las diferencias y los cambios y finalmente con
+ <span><b>git commit</b></span> guardas una instantánea con el estado del conjunto de archivos en
+ese momento determinado.
+</p>
+  </li>
+</ul>
         </section>
         <section class="main-section">
           <header>git reset - deshace cambios y commits</header>
