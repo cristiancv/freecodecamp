@@ -507,20 +507,93 @@ punto especíﬁco.
             confirmarlos más tarde.</h2></header>
           <p>Si estás en medio de algunos cambios y de repente aparece un bug urgente que
             no podes dejar de atender, pero no podes hacer un commit con algo que no anda
-            y tampoco queres perder los cambios, entonces este comando es la solución.</p>
+            y tampoco quieres perder los cambios, entonces este comando es la solución.</p>
           <p>p2</p>
           <ul>
             <li>
-              <h3></h3>
+              <h3>git stash - agrega los cambios actuales a la pila</h3>
+              <p> 
+Este comando agarra todos los cambios del directorio de trabajo y del index y los pone en una lista
+para poder buscarlos posteriormente. Después de correrlo te deja un directorio
+de trabajo limpio y te devuelve al estado del último commit realizado.
+              </p>
+<pre><code>
+$ git status -s
+M hello.rb
+$ git stash
+Saved working directory and index state WIP on master: 5857ac1 hello with a flower
+HEAD is now at 5857ac1 hello with a flower
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+</code></pre>
             </li>
             <li>
-              <h3></h3>
+              <h3> <span><b>git stash list</b></span> - ver los stash que están en la lista</h3>
+              <p>
+Al correr este comando nos devolverá una lista con los stashes realizados.
+              </p>
+<pre><code>
+  $ git stash list
+  stash@{0}: WIP on master: 5857ac1 hello with a flower
+</code></pre>
+<p>
+  El último ítem agregado en el stash será referenciado por stash@{0} e incremen-
+tará a los que estén en una unidad.
+</p>
+<pre><code>
+$ vim hello.rb
+$ git commit -am 'it stops raining'
+[master ee2d2c6] it stops raining
+1 files changed, 1 insertions(+), 1 deletions(-)
+$ vim hello.rb
+$ git stash
+Saved working directory and index state WIP on master: ee2d2c6 it stops raining
+HEAD is now at ee2d2c6 it stops raining
+$ git stash list
+stash@{0}: WIP on master: ee2d2c6 it stops raining
+stash@{1}: WIP on master: 5857ac1 hello with a flower
+</code></pre>
             </li>
             <li>
-              <h3></h3>
+              <h3>git stash apply - toma un ítem de la lista de stashes y lo aplica al
+                directorio de trabajo.</h3>
+                <p>
+                  Cuando estés listo para continuar desde donde dejaste,
+ejecuta el comando git stash para traer de vuelta los cambios guardados en el
+directorio de trabajo.
+                </p>
+<pre>
+  <code>
+    $ git stash apply
+    # On branch master
+    # Changes not staged for commit:
+    # (use "git add &ltfile&gt..." to update what will be committed)
+    # (use "git checkout -- &ltfile&gt..." to discard changes in working directory)
+    #
+    # modified:  hello.rb
+    # no changes added to commit (use "git add" and/or "git commit -a")    
+  </code>
+</pre>
+<p>
+Si además queres borrar de la lista el ítem que tomaste, debes ejecutar <span><b>git stash pop</b></span>. 
+</p>
             </li>
             <li>
-              <h3></h3>
+              <h3>git stash drop - remueve un ítem de la lista de stashes</h3>
+              <p>
+                Si corres el
+comando sin ningún parámetro entonces removerá el último stash, en cambio
+podes especificar un ítem particular de la lista. En el siguiente ejemplo, se borra
+el anterior al último:
+              </p>
+<pre><code>
+$ git stash drop stash@{1}
+Dropped stash@{1} (0b1478540189f30fef9804684673907c65865d8f)
+</code></pre>
+<p>
+  Si queres borrar toda la lista entonces debes ejecutar el comando <span><b>git stash clear</b></span>.
+</p>
             </li>
           </ul>
           <code></code>
