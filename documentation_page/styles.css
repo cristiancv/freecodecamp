@@ -5,4 +5,42 @@
 }
 :root{
   --color_fondo:rgb(181, 185, 235);
+  --fondo2:#032b15;
+}
+body{
+  line-height: 2rem;
+  font-size:1.6rem;
+}
+html{
+font-size: 62.5%;
+}
+.contenedor{
+  padding:5px;
+  display: flex;
+  flex-direction: row;
+}
+#navbar{
+  width:25vw;
+  height: auto;
+  border-right: 2px solid black;  
+}
+#navbar ul{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#navbar ul li{
+  list-style-type: none;
+}
+#navbar ul li a{
+  font-size:1.6rem;
+  text-decoration: none;
+}
+#navbar ul li a:hover{
+  background-color: var(--fondo2);
+  color:floralwhite;
+}
+#main-doc{
+  width:75vw;
+  height: auto;
 }
