@@ -10,7 +10,7 @@
   <body>
     <div id="contenido" class="contenedor">
       <nav id="navbar">
-        <header> <h1>Comandos básicos en Git: Índice </h1></header>
+        <header> <h1>Comandos básicos en Git: Índice </h1><hr></header>
         <ul>
           <li>
             <a class="nav-link" href="#git_init">git init - inicializar una carpeta como un repositorio Git.</a>
@@ -57,16 +57,15 @@
       <main id="main-doc">
         <section class="main-section">
           <header> <h2 id="git_init">Git init - inicializar una carpeta como un repositorio Git. </h2></header>
-          <p>Para crear un repositorio en una carpeta existente de archivos, podes ejecutar el
+          <p>Para crear un repositorio en una carpeta existente de archivos, puedes ejecutar el
             comando <span><b>git init</b></span>   en esa carpeta. Por ejemplo, digamos que tenemos una carpeta
             con algunos archivos adentro, así:</p>
 <pre><code>$cd repositorio_nuevo
 $ls
-README hello.rb
-</code></pre>
+README hello.rb</code></pre>
           <p>Se trata de un proyecto en el que estamos escribiendo ejemplos del “Hola Mundo”
             en todos los idiomas. Hasta el momento, sólo tenemos el código escrito en Ruby.
-            Para iniciar el control de versión con Git, podemos ejecutar git init.</p>
+            Para iniciar el control de versión con Git, podemos ejecutar <span><b>git init</b></span>.</p>
 <pre><code>$git init
 Initialized empty Git repository in /repositorio_nuevo/.git/</code></pre>
 <p>Ahora se puede ver que hay una subcarpeta oculta llamada “.git” en el proyecto.
@@ -121,12 +120,12 @@ config index objects
   proyecto en la dirección que le indiques - básicamente cualquier cosa que
   aparezca después de la última barra de la URL. Si queres un nombre diferente,
   podes ponerlo al ﬁnal del comando, después de la URL. Entonces, se utiliza el
-  comando git clone para obtener una copia local de un repositorio Git, para que
+  comando <span><b>git clone</b></span> para obtener una copia local de un repositorio Git, para que
   puedas verlo y empezar a modiﬁcarlo. </p>        
         </section>
         <section class="main-section">
           <header><h2 id="git_add">git add - agregar los contenidos de archivos al staging area.</h2></header>
-          <p>En Git tenes que agregar previamente los cambios realizados al staging area
+          <p>En Git tienes que agregar previamente los cambios realizados al staging area
             para luego poder hacer el commit correspondiente (conﬁrmar los cambios). Si
             el archivo que estás agregando es nuevo, entonces tenes que correr el comando
             <span><b>git add</b></span> para añadirlo inicialmente en tu staging area. Si el archivo ya está en
@@ -164,8 +163,7 @@ config index objects
             del informe, en cambio si no usamos esa opción, nos mostrará más información
             del contexto. Aquí hay un ejemplo del resultado con y sin la opción:
           </p>
-<pre><code>
-$ git status -s
+<pre><code>$ git status -s
 AM README
 A hello.rb
 Sin la opción se vería algo así:
@@ -194,8 +192,7 @@ D hello.rb
 <p>En el siguiente ejemplo se pueden ver dos columnas, la primera es para el staging
   area, la segunda es para el directorio de trabajo. Entonces, por ejemplo si tienes
   el README file en el stage y después lo modificas nuevamente sin correr <span><b>“git add”</b></span> nuevamente, vas a ver algo así: </p>
-<pre><code>
-$ git status -s
+<pre><code>$ git status -s
 MM README
 D hello.rb
 </code></pre>

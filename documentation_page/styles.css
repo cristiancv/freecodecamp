@@ -76,17 +76,21 @@ header{
 #main-doc li{
  list-style-type: none;
 }
-#main-doc h2, #main-doc h3{
+h1, #main-doc h2, #main-doc h3{
   margin:20px 0px;
   color:var(--titulos);
 }
 #main-doc li p, #main-doc p{
   text-align: justify;
+  margin-bottom: 20px;
  }
 #main-doc pre {
 	background-color: #12283c;
 	color: rgb(202, 199, 6);
   color:var(--texto-comando);
 	margin: 20px auto;
-	padding: 20px 10px;
+	padding: 15px 10px;
+}
+#main-doc p span b{
+  font-family: monospace;
 }
