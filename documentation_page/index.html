@@ -13,42 +13,42 @@
         <header> <h1>Comandos básicos en Git: Índice </h1></header>
         <ul>
           <li>
-            <a class="nav-link" href="http://">git init - inicializar una carpeta como un repositorio Git.</a>
+            <a class="nav-link" href="#git_init">git init - inicializar una carpeta como un repositorio Git.</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://">git clone - copiar un repositorio Git.</a>
+            <a class="nav-link" href="#git_clone">git clone - copiar un repositorio Git.</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://">git add - agregar los contenidos de archivos al staging area.</a>
+            <a class="nav-link" href="#git_add">git add - agregar los contenidos de archivos al staging area.</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://"
+            <a class="nav-link" href="#git_status"
               >git status - estado de los archivos en el directorio de trabajo y en
               el staging area</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://">git diff - muestra diferencias entre el stage y lo modificado que
+            <a class="nav-link" href="#git_diff">git diff - muestra diferencias entre el stage y lo modificado que
                 no esta en el stage</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://">git commit - graba una instantánea del staging area.</a>
+            <a class="nav-link" href="#git_commit">git commit - graba una instantánea del staging area.</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://">git reset - deshace cambios y commits</a>
+            <a class="nav-link" href="#git_reset">git reset - deshace cambios y commits</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://">git rm - remueve archivos del staging area</a>
+            <a class="nav-link" href="#git_rm">git rm - remueve archivos del staging area</a>
           </li>
           <hr />
           <li>
-            <a class="nav-link" href="http://">git stash - guardar cambios realizados en el stage y el index para
+            <a class="nav-link" href="#git_stash">git stash - guardar cambios realizados en el stage y el index para
                 confirmarlos más tarde</a>
           </li>
           <hr />
@@ -56,7 +56,7 @@
       </nav>
       <main id="main-doc">
         <section class="main-section">
-          <header id="git_init"> <h2>Git init - inicializar una carpeta como un repositorio Git. </h2></header>
+          <header> <h2 id="git_init">Git init - inicializar una carpeta como un repositorio Git. </h2></header>
           <p>Para crear un repositorio en una carpeta existente de archivos, podes ejecutar el
             comando <span><b>git init</b></span>   en esa carpeta. Por ejemplo, digamos que tenemos una carpeta
             con algunos archivos adentro, así:</p>
@@ -93,7 +93,7 @@ momento.</p>
 </ul>
         </section>
         <section class="main-section">
-          <header id="titulo_2"> <h2>Git clone - copiar un repositorio Git.</h2></header>
+          <header> <h2 id="git_clone">Git clone - copiar un repositorio Git.</h2></header>
           <p>Si tienes que colaborar con alguien en un proyecto, o si deseas obtener una copia
             de un proyecto para poder ver o usar el código, debes clonarlo. Para lograrlo
             sólo tienes que ejecutar el comando <span><b>git clone [url]</b></span>  con la URL del proyecto que
@@ -134,7 +134,7 @@ config index objects
   puedas verlo y empezar a modiﬁcarlo. </p>        
         </section>
         <section class="main-section">
-          <header><h2>git add - agregar los contenidos de archivos al staging area.</h2></header>
+          <header><h2 id="git_add">git add - agregar los contenidos de archivos al staging area.</h2></header>
           <p>En Git tenes que agregar previamente los cambios realizados al staging area
             para luego poder hacer el commit correspondiente (conﬁrmar los cambios). Si
             el archivo que estás agregando es nuevo, entonces tenes que correr el comando
@@ -165,7 +165,7 @@ config index objects
           </p>
         </section>
         <section class="main-section">
-          <header> <h2>git status - estado de los archivos en el directorio de trabajo y en
+          <header> <h2 id="git_status">git status - estado de los archivos en el directorio de trabajo y en
             el staging area.</h2></header>
           <p>Tal como lo mencionamos en la sección anterior, uno puede usar este comando
             para ver el estado de su staging area comparado con el código que se encuentra en
@@ -210,7 +210,7 @@ D hello.rb
 </code></pre>
         </section>
         <section class="main-section">
-          <header><h2>git diff muestra diferencias entre el stage y lo modificado que
+          <header><h2 id="git_diff">git diff muestra diferencias entre el stage y lo modificado que
             no esta en el stage.</h2></header>
             <p>Hay dos usos diferentes para el comando git diff. El uso que veremos a continuación lo vamos a usar para describir los cambios que están en stage o que
               fueron modificados pero no están en el stage.</p>
@@ -280,7 +280,7 @@ estas opciones para limitar la salida del diff a un archivo o subdirectorio.
           </ul>
         </section>
         <section class="main-section">
-          <header><h2>git commit - graba una instantánea del staging area.</h2></header>
+          <header><h2 id="git_commit">git commit - graba una instantánea del staging area.</h2></header>
           <p>Una vez que agregaste los cambios al staging area, vas a necesitar confirmar
             esos cambios con el comando add, pero para poder hacerlo git necesita grabar
             tus datos personales para poder hacer un seguimiento de los cambios. Entonces,
@@ -375,7 +375,7 @@ ese momento determinado.
 </ul>
         </section>
         <section class="main-section">
-          <header><h2>  git reset - deshace cambios y commits.</h2></header>
+          <header><h2 id="git_reset">  git reset - deshace cambios y commits.</h2></header>
           <p>Este es probablemente el comando más confuso, pero puede ser muy útil cuando
             cometas algún error.</p>
           <ul>
@@ -490,7 +490,7 @@ punto especíﬁco.
           <code></code>
         </section>
         <section class="main-section">
-          <header><h2>git rm - remueve archivos del staging area.</h2></header>
+          <header><h2 id="git_rm">git rm - remueve archivos del staging area.</h2></header>
           <p>Esto es un poco diferente a <span><b>git reset HEAD</b></span> que saca los archivos del stage.
             Sacarlo del stage signiﬁca revertir el staging area a la versión anterior a que empecemos
             a modiﬁcar archivos en el directorio de trabajo. En cambio el comando
@@ -503,7 +503,7 @@ punto especíﬁco.
           <li></li>
         </section>
         <section class="main-section">
-          <header> <h2>git stash - guardar cambios realizados en el stage y el index para
+          <header> <h2 id="git_stash">git stash - guardar cambios realizados en el stage y el index para
             confirmarlos más tarde.</h2></header>
           <p>Si estás en medio de algunos cambios y de repente aparece un bug urgente que
             no podes dejar de atender, pero no podes hacer un commit con algo que no anda

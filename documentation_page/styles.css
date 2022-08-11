@@ -23,6 +23,9 @@ header{
   margin:20px auto;
 }
 #navbar{
+  position: fixed;
+  left: 0%;
+  top:0%;
   width:25vw;
   height: auto;
   border-right: 2px solid black;
@@ -42,11 +45,16 @@ header{
   text-decoration: none;
   text-align: justify;
 }
+#navbar ul li a:link{
+  color:black;
+}
 #navbar ul li a:hover{
   background-color: var(--fondo2);
   color:floralwhite;
 }
 #main-doc{
+  position:relative;
+  left:380px;
   width:75vw;
   height: auto;
   padding: 10px 5px;
