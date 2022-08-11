@@ -6,6 +6,8 @@
 :root{
   --color_fondo:rgb(181, 185, 235);
   --fondo2:#032b15;
+  --texto-comando:rgb(240, 229, 229);
+  --titulos:#12283c;
 }
 body{
   line-height: 2rem;
@@ -15,9 +17,12 @@ html{
 font-size: 62.5%;
 }
 .contenedor{
-  padding:5px;
+  padding:10px;
+  margin:10px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 header{
   margin:20px auto;
@@ -26,7 +31,7 @@ header{
   position: fixed;
   left: 0%;
   top:0%;
-  width:25vw;
+  width:24%;
   height: auto;
   border-right: 2px solid black;
   padding: 10px;  
@@ -39,6 +44,10 @@ header{
 #navbar ul li{
   list-style-type: none;
   margin:10px 0px;
+  padding:5px;
+}
+#navbar ul li:hover {
+	background-color: #CCC;
 }
 #navbar ul li a{
   font-size:1.6rem;
@@ -48,24 +57,36 @@ header{
 #navbar ul li a:link{
   color:black;
 }
+#navbar ul li a:visited{
+  color:black;
+}
 #navbar ul li a:hover{
-  background-color: var(--fondo2);
-  color:floralwhite;
+  font-size:1.5rem;
+  color:black;
+  font-weight: bold;
 }
 #main-doc{
-  position:relative;
-  left:380px;
-  width:75vw;
+  position: relative;
+  left:10%;
+  margin:10px auto;
+  width:70%;
   height: auto;
   padding: 10px 5px;
 }
 #main-doc li{
  list-style-type: none;
 }
-#main-doc li p{
+#main-doc h2, #main-doc h3{
+  margin:20px 0px;
+  color:var(--titulos);
+}
+#main-doc li p, #main-doc p{
   text-align: justify;
  }
- #main-doc pre{
-  background-color: black;
-  color:rgb(210, 231, 86);
- }
+#main-doc pre {
+	background-color: #12283c;
+	color: rgb(202, 199, 6);
+  color:var(--texto-comando);
+	margin: 20px auto;
+	padding: 20px 10px;
+}

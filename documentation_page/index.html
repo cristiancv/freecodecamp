@@ -60,25 +60,19 @@
           <p>Para crear un repositorio en una carpeta existente de archivos, podes ejecutar el
             comando <span><b>git init</b></span>   en esa carpeta. Por ejemplo, digamos que tenemos una carpeta
             con algunos archivos adentro, así:</p>
-          <pre>
-<code>
-  $cd repositorio_nuevo
-  $ls
-  README hello.rb
-</code>            
-</pre>
+<pre><code>$cd repositorio_nuevo
+$ls
+README hello.rb
+</code></pre>
           <p>Se trata de un proyecto en el que estamos escribiendo ejemplos del “Hola Mundo”
             en todos los idiomas. Hasta el momento, sólo tenemos el código escrito en Ruby.
             Para iniciar el control de versión con Git, podemos ejecutar git init.</p>
-<pre><code>
-  $git init
-  Initialized empty Git repository in /repositorio_nuevo/.git/
-</code></pre>
+<pre><code>$git init
+Initialized empty Git repository in /repositorio_nuevo/.git/</code></pre>
 <p>Ahora se puede ver que hay una subcarpeta oculta llamada “.git” en el proyecto.
   Este es tu repositorio donde se almacenan todos los cambios del proyecto. </p>
-<pre><code>
-  $ls -a 
-  . .. .git README hello.rb
+<pre><code>$ls -a 
+. .. .git README hello.rb
 </code></pre>
   <p>
     En pocas palabras, se usa “git init” para convertir una carpeta existente en un
@@ -98,8 +92,7 @@ momento.</p>
             de un proyecto para poder ver o usar el código, debes clonarlo. Para lograrlo
             sólo tienes que ejecutar el comando <span><b>git clone [url]</b></span>  con la URL del proyecto que
             deseas copiar.</p>
-<pre><code>
-$git clone git://github.com/schacon/simplegit.git
+<pre><code>$git clone git://github.com/schacon/simplegit.git
 
 Initialized empty Git repository in /private/tmp/simplegit/.git/
 remote: Counting objects: 100, done.
@@ -110,9 +103,7 @@ Resolving deltas: 100% (35/35), done.
 
 $cd simplegit/
 $ls 
-README Rakefile lib
-
-</code></pre>
+README Rakefile lib</code></pre>
           <p>Esto copiará toda la historia de este proyecto, con lo cual lo tendrás a nivel local
             y te dará una carpeta de trabajo de la rama principal de ese proyecto para que
             puedas ver el código o empezar a editarlo. Si cambias a la nueva carpeta, podes
