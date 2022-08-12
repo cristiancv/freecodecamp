@@ -107,8 +107,7 @@ README Rakefile lib</code></pre>
             y te dará una carpeta de trabajo de la rama principal de ese proyecto para que
             puedas ver el código o empezar a editarlo. Si cambias a la nueva carpeta, podes
             ver la subcarpeta .git (ahí es donde están todos los datos del proyecto).</p>
-<pre><code>
-$ ls -a
+<pre><code>$ ls -a
 . .. .git README Rakefile lib
 $ cd .git
 $ls 
@@ -134,10 +133,9 @@ config index objects
             Volviendo al ejemplo de Hola Mundo, una vez iniciado el proyecto, empezaremos
             a agregarle archivos y para ello correremos el comando git add. Podemos usar
             el comando git status para ver en que estado está nuestro proyecto.</p>
-<pre><code>
-  $ git status -s
-  ?? README
-  ?? hello.rb
+<pre><code>$ git status -s
+?? README
+?? hello.rb
 </code></pre>
           <p>El estado ‘AM’ signiﬁca que el archivo fue modiﬁcado en el disco desde que lo
             agregamos. Esto signiﬁca que si hacemos un commit de nuestro cambios hasta
@@ -184,8 +182,7 @@ $ git status
             datos útiles que nos pueden llegar a servir en algún momento. Git además te
             informará de los archivos que fueron borrados, agregados o modiﬁcados desde
             tu último commit.</p>
-<pre><code>
-$ git status -s
+<pre><code>$ git status -s
 M README
 D hello.rb
 </code></pre>
@@ -207,23 +204,19 @@ D hello.rb
           <p>Sin ningún argumento adicional, un simple <span><b>git diff</b></span> mostrará en formato unificado, qué código o contenido ha cambiado en el proyecto desde el último commit,
             que todavía no se metió en el stage area (no se le hizo el add) para el próximo
             commit.</p>
-<pre><code>
-$ vim hello.rb
+<pre><code>$ vim hello.rb
 $ git status -s
-M hello.rb
+ M hello.rb
 $ git diff
 diff --git a/hello.rb b/hello.rb
 index d62ac43..8d15d50 100644
 --- a/hello.rb
 +++ b/hello.rb
 @@ -1,7 +1,7 @@
-class HelloWorld
-def self.hello
--
-puts "hello world"
-#indica que se reemplazó esta línea por la de abajo. (- por +)
-+
-puts "hola mundo"
+ class HelloWorld
+  def self.hello
+- puts "hello world" #indica que se reemplazó esta línea por la de abajo. (- por +)
++ puts "hola mundo"
 end
 end
 </code></pre>
@@ -243,8 +236,7 @@ subido y el directorio, sin tener en cuenta lo que está en el staging area.
           </li>
           <li>
             <h3>
-              git diff --stat - muestra una lista de cambios en lugar de un diff com-
-pleto por archivo.
+              git diff --stat - muestra una lista de cambios en lugar de un diff completo por archivo.
             </h3>
             <p>
               Si no queremos la salida completa del diff, pero queremos
@@ -252,14 +244,11 @@ pleto por archivo.
               dará un resumen de los cambios en su lugar. Acá está el mismo ejemplo anterior,
               pero con la opción --stat.
             </p>
-<pre><code>
-$ git status -s
+<pre><code>$ git status -s
 MM hello.rb
 $ git diff --stat
-hello.rb |
-1 +
-1 files changed, 1 insertions(+), 0 deletions(-)
-</code></pre>
+hello.rb |     1 +
+1 files changed, 1 insertions(+), 0 deletions(-)</code></pre>
 <p>
   También se puede proporcionar una ruta de archivo al final de cualquiera de
 estas opciones para limitar la salida del diff a un archivo o subdirectorio.
@@ -273,15 +262,13 @@ estas opciones para limitar la salida del diff a un archivo o subdirectorio.
             esos cambios con el comando add, pero para poder hacerlo git necesita grabar
             tus datos personales para poder hacer un seguimiento de los cambios. Entonces,
             el primer paso es configurar estos datos:</p>
-<pre><code>
-$ git config --global user.name 'Tu nombre'
+<pre><code>$ git config --global user.name 'Tu nombre'
 $ git config --global user.email tumail@algundominio.com
 </code></pre>
           <p>A continuación vamos a meter en el stage los cambios y luego a confirmarlos, en
             este ejemplo se usa la opción -m para agregar el mensaje al mismo tiempo que
             confirmamos los cambios:</p>
-<pre><code>
-$ git add hello.rb
+<pre><code>$ git add hello.rb
 $ git status -s
 M hello.rb
 $ git commit -m 'mis cambios al archivo hola mundo'
@@ -293,24 +280,21 @@ $ git commit -m 'mis cambios al archivo hola mundo'
 “limpio”, lo que significa que no hicimos ningún cambio desde nuestro último
 commit.
 </p>
-<pre><code>
-$ git status
-# On branch master nothing to commit (working directory clean)
+<pre><code>$ git status
+# On branch master
+nothing to commit (working directory clean)
 </code></pre>
 <p>
   Si no ingresamos la opción -m git va a intentar abrir un editor de texto para
 que escribas el mensaje. Algo como esto:
 </p>
-<pre><code>
-# Please enter the commit message for your changes. Lines starting
+<pre><code># Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 # On branch master
 # Changes to be committed:
+#   (use "git reset HEAD &ltfile&gt..." to unstage)
 #
-(use "git reset HEAD <file>..." to unstage)
-#
-# modified:
-hello.rb
+# modified:   hello.rb
 #
 ~
 ~
@@ -323,29 +307,27 @@ importante escribir un buen mensaje de confirmación.
 </p>
 <ul>
   <li>
-    <h3><span><b>git commit -a</b></span>  - agrega automáticamente en el staging area los cam-
-      bios de archivos que están en seguimiento</h3>
+    <h3><span><b>git commit -a</b></span>  - agrega automáticamente en el staging area los cambios de archivos que están en seguimiento</h3>
       <p>
 Si te parece que correr el comando git add cada vez que modificas un archivo es demasiado engorroso,
 Git te permite saltar esta parte con la opción -a. Esto le dice a Git, que ejecute
 el git add en cualquier archivo que ya esta en “seguimiento” - es decir, cualquier
 archivo que se encontraba en tu último commit y después fue modificado. Esto
 te permite hacer un flujo de trabajo más al estilo de Subversion, sólo tenés que
-editar los archivos y luego ejecutar git commit -a cuando queres que todo lo que
+editar los archivos y luego ejecutar <span><b>git commit -a</b></span>  cuando quieres que todo lo que
 ha cambiado entre en el commit. Igualmente siempre tenes que ejecutar git add
 para iniciar el seguimiento de nuevos archivos.
       </p>
-<pre><code>
-  $ vim hello.rb
+<pre><code>$ vim hello.rb
   $ git status -s
-  M hello.rb
+   M hello.rb
   $ git commit -m 'cambios en el archivo hola'
   # On branch master
   # Changed but not updated:
-  #(use "git add &ltfile&gt..." to update what will be committed)
-  #(use "git checkout -- &ltfile&gt..." to discard changes in working directory)
+  #   (use "git add &ltfile&gt..." to update what will be committed)
+  #   (use "git checkout -- &ltfile&gt..." to discard changes in working directory)
   #
-  # modified: hello.rb
+  # modified:   hello.rb
   #
   no changes added to commit (use "git add" and/or "git commit -a")
   $ git commit -am 'changes to hello file'
@@ -378,21 +360,19 @@ sacas uno? Lo haces con <span><b>git reset HEAD -- nombreArchivo</b></span>. Té
 opciones y empiezas a enumerar las rutas de los archivos. Veamos un ejemplo, en el que tenemos dos archivos que fueron modiﬁcados desde el último commit,
 vamos a hacer un commit con ambos y luego sacaremos uno de los dos:
 </p>
-<pre><code>
-  $ git status -s
-   M README
-   M hello.rb
-  $ git add .
-  $ git status -s
-  M README
-  M hello.rb
-  $ git reset HEAD -- hello.rb
-  Unstaged changes after reset:
-  M hello.rb
-  $ git status -s
-  M README
-   M hello.rb
-</code></pre>
+<pre><code>$ git status -s
+ M README
+ M hello.rb
+$ git add .
+$ git status -s
+M README
+M hello.rb
+$ git reset HEAD -- hello.rb
+Unstaged changes after reset:
+M hello.rb
+$ git status -s
+M README
+ M hello.rb</code></pre>
 <p>
   Ahora sí, puedes correr <span><b>git commit</b></span>  para grabar los cambios al archivo README,
 no al archivo hello.rb. En caso de que te preguntes que está haciendo, lo que
@@ -413,25 +393,21 @@ y --hard.
     del staging).</h3>
     <p>
       Lo primero que git reset hace es deshacer el último commit y
-poner los archivos de nuevo en el índice. Si se incluye la opción –soft HEAD~
+poner los archivos de nuevo en el índice. Si se incluye la opción --soft HEAD~
 se puede deshacer el commit y los archivos modiﬁcados estarán de vuelta en el
 stage.
     </p>
-    <pre>
-      <code>
-        $ git status -s
-        M hello.rb
-        $ git commit -am 'hello with a flower'
-        [master 5857ac1] hello with a flower
-        1 files changed, 3 insertions(+), 1 deletions(-)
-        $ git status
-        # On branch master
-        nothing to commit (working directory clean)
-        $ git reset --soft HEAD~
-        $ git status -s
-        M hello.rb 
-      </code>
-    </pre>
+    <pre><code>$ git status -s
+M hello.rb
+$ git commit -am 'hello with a flower'
+[master 5857ac1] hello with a flower
+1 files changed, 3 insertions(+), 1 deletions(-)
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+$ git reset --soft HEAD~
+$ git status -s
+M hello.rb</code></pre>
     <p>
       Esto es, básicamente, hacer lo mismo que <span><b>git commit --amend</b></span>, que te permite
 hacer más cambios y meterlos en el mismo último commit.
@@ -450,11 +426,10 @@ push, porque puede traer problemas.
     pisa los cambios del directorio de trabajo </h3>
     <p>Esta es la opción más peligrosa,
       ya que si lo corres por error perdes los cambios que venías realizando en tu directorio de trabajo.</p>
-<pre><code>
-$ git status
+<pre><code>$ git status
 # On branch master
 # Changes to be committed:
-# (use "git reset HEAD <file>..." to unstage)
+# (use "git reset HEAD &ltfile&gt..." to unstage)
 # modified: README
 # Changes not staged for commit:
 # (use "git add &ltfile&gt..." to update what will be committed)
@@ -463,7 +438,8 @@ $ git status
 $ git reset --hard HEAD
 HEAD is now at 5857ac1 hello with a flower
 $ git status
-# On branch master nothing to commit (working directory clean)
+# On branch master 
+nothing to commit (working directory clean)
 </code></pre>
 <p>
   En el ejemplo anterior, teníamos los cambios para meterlos en el stage y luego
@@ -474,8 +450,6 @@ punto especíﬁco.
 </p>
     </li>
           </ul>
-            <p>p2</p>
-          <code></code>
         </section>
         <section class="main-section">
           <header><h2 id="git_rm">git rm - remueve archivos del staging area.</h2></header>
@@ -496,7 +470,6 @@ punto especíﬁco.
           <p>Si estás en medio de algunos cambios y de repente aparece un bug urgente que
             no podes dejar de atender, pero no podes hacer un commit con algo que no anda
             y tampoco quieres perder los cambios, entonces este comando es la solución.</p>
-          <p>p2</p>
           <ul>
             <li>
               <h3>git stash - agrega los cambios actuales a la pila</h3>
@@ -505,8 +478,7 @@ Este comando agarra todos los cambios del directorio de trabajo y del index y lo
 para poder buscarlos posteriormente. Después de correrlo te deja un directorio
 de trabajo limpio y te devuelve al estado del último commit realizado.
               </p>
-<pre><code>
-$ git status -s
+<pre><code>$ git status -s
 M hello.rb
 $ git stash
 Saved working directory and index state WIP on master: 5857ac1 hello with a flower
@@ -521,16 +493,14 @@ nothing to commit (working directory clean)
               <p>
 Al correr este comando nos devolverá una lista con los stashes realizados.
               </p>
-<pre><code>
-  $ git stash list
-  stash@{0}: WIP on master: 5857ac1 hello with a flower
+<pre><code>$ git stash list
+stash@{0}: WIP on master: 5857ac1 hello with a flower
 </code></pre>
 <p>
   El último ítem agregado en el stash será referenciado por stash@{0} e incremen-
 tará a los que estén en una unidad.
 </p>
-<pre><code>
-$ vim hello.rb
+<pre><code>$ vim hello.rb
 $ git commit -am 'it stops raining'
 [master ee2d2c6] it stops raining
 1 files changed, 1 insertions(+), 1 deletions(-)
@@ -551,18 +521,14 @@ stash@{1}: WIP on master: 5857ac1 hello with a flower
 ejecuta el comando git stash para traer de vuelta los cambios guardados en el
 directorio de trabajo.
                 </p>
-<pre>
-  <code>
-    $ git stash apply
-    # On branch master
-    # Changes not staged for commit:
-    # (use "git add &ltfile&gt..." to update what will be committed)
-    # (use "git checkout -- &ltfile&gt..." to discard changes in working directory)
-    #
-    # modified:  hello.rb
-    # no changes added to commit (use "git add" and/or "git commit -a")    
-  </code>
-</pre>
+<pre><code>$ git stash apply
+# On branch master
+# Changes not staged for commit:
+# (use "git add &ltfile&gt..." to update what will be committed)
+# (use "git checkout -- &ltfile&gt..." to discard changes in working directory)
+#
+# modified:  hello.rb
+no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 <p>
 Si además queres borrar de la lista el ítem que tomaste, debes ejecutar <span><b>git stash pop</b></span>. 
 </p>
@@ -575,8 +541,7 @@ comando sin ningún parámetro entonces removerá el último stash, en cambio
 podes especificar un ítem particular de la lista. En el siguiente ejemplo, se borra
 el anterior al último:
               </p>
-<pre><code>
-$ git stash drop stash@{1}
+<pre><code>$ git stash drop stash@{1}
 Dropped stash@{1} (0b1478540189f30fef9804684673907c65865d8f)
 </code></pre>
 <p>
