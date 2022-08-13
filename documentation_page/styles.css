@@ -78,11 +78,17 @@ html {
 h1 {
   color: var(--titulos);
   margin: 20px auto;
+  line-height: 3.6rem;
 }
-#main-doc h2,
+#main-doc header,
 #main-doc h3 {
   margin: 30px 0px;
   color: var(--titulos);
+  line-height: 2.5rem;
+}
+header{
+  font-size:2.2rem;
+  font-weight: bold;
 }
 #main-doc li p,
 #main-doc p {
