@@ -1,11 +1,17 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 :root {
-  --titulos1: rgb(180, 178, 209);
-  --fondo-encabezado: rgb(120, 120, 120);
+  --titulos1: #d9d5d5;
+  --titulo-encabezado:#bd701f;
+  --titulo-bienvenidos:#417cea;
+  --titulo-proyectos:#c0c0c0;
+  --fondo-encabezado:#05183c;
+  --fondo-bienvenidos:#06296b;
+  --fondo-proyectos:#1a3c7d;
+  --fondo-contactame: #01060c;
 }
 html {
   font-size: 62.5%;
@@ -14,39 +20,38 @@ body {
   line-height: 3rem;
   font-size: 1.6rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: black;
 }
-header {
-  /*padding: 10px;*/
+#navbar {
+  position: fixed;
+  top:0%;
+  left:0%;
   background: var(--fondo-encabezado);
-  width: 100vw;
-  height: auto;
-}
-header #navbar {
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-header #navbar ul {
-  display: flex;
-  width: 40%;
-  /*gap: 40px;*/
+#navbar ul {
+  display: flex;  
 }
-header #navbar li {
+#navbar li {
   list-style-type: none;
   padding: 2rem;
-  height: 100%;
 }
 #navbar a.navlink {
   text-decoration: none;
   font-size: 2.2rem;
-  color: floralwhite;
+  color: var(--titulos1);
   margin: 10px;
   padding: 5px;
 }
+#navbar a.navlink:hover {
+  color:var(--titulo-encabezado);
+}
 #navbar li:hover {
-  background-color: black;
+  background-color: black;  
 }
 #welcome-section {
   width: 100vw;
@@ -56,15 +61,57 @@ header #navbar li {
   justify-content: center;
   align-items: center;
   line-height: 6rem;
-  background-color: cornflowerblue;
+  background-color: var(--fondo-bienvenidos);
+  color:var(--titulos1);
 }
 #welcome-section h1 {
   font-size: 4rem;
   font-weight: bold;
+  color:var(--titulo-encabezado);
 }
 #welcome-section p {
   font-size: 3rem;
 }
 #projects {
-  background-color: rgb(54, 116, 54);
+  background-color: var(--fondo-proyectos);  
+}
+#projects h2, #projects h3{
+  color:var(--titulo-proyectos);
+  text-align: center;
+  margin:20px auto;
+}
+.div-projects{
+  width:90%;
+  margin: 20px auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap:30px;
+  background-color:#749cce;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#projects article{
+  display: block;
+  width: 300px;
+  height: 350px;
+  border: black 2px dashed;
+}
+#projects-link{
+  display: inline-block;
+  padding:10px;
+  margin:20px auto;
+  text-decoration: none;
+  border-radius: 20px;
+  color:var(--titulos1);
+  font-weight: bold;
+  background-color: var(--fondo-bienvenidos);
+}
+#projects-link:hover{
+  color:var(--titulo-proyectos);
+  background-color: var(--fondo-encabezado);
+}
+#contactame{
+  background-color: var(--fondo-contactame);
+  color:var(--titulo-encabezado);
 }
