@@ -86,7 +86,7 @@ body {
   height: auto;
   display: flex;
   flex-direction: row;
-  gap:30px;
+  gap:50px;
   background-color:#749cce;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -112,6 +112,33 @@ body {
   background-color: var(--fondo-encabezado);
 }
 #contactame{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:40px;
+  align-items: space-around;
+  width:100vw;
+  height: 100vh;
   background-color: var(--fondo-contactame);
   color:var(--titulo-encabezado);
+  font-size: 3rem;
+  line-height: 4rem;
+}
+#ul-contactame{
+  display: flex;
+  flex-direction: row;
+  gap:50px;
+  justify-content: center;
+  align-items: center;  
+}
+#ul-contactame a{
+  color:var(--titulos1);
+  text-decoration: none;
+}
+#ul-contactame li{
+  padding:10px;
+  list-style-type: none;
+}
+#ul-contactame li:hover{ 
+  font-weight: bold;
 }
